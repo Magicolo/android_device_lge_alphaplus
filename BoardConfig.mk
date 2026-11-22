@@ -17,7 +17,9 @@ BOARD_LGE_HAS_EXT_AMPLIFIER := true
 TARGET_SCREEN_DENSITY := 560
 
 # Kernel
-TARGET_KERNEL_CONFIG := vendor/lineageos_alpha_defconfig
+TARGET_KERNEL_CONFIG += vendor/lge/lge-alpha.config
+# Use the arm64 kernel's CPU-specific page-table isolation policy.
+BOARD_KERNEL_CMDLINE := $(filter-out kpti=off,$(BOARD_KERNEL_CMDLINE))
 
 # Lights
 $(call soong_config_set,LGE_LIGHTS_HAL,INCLUDE_DIR,$(DEVICE_PATH)/include)
