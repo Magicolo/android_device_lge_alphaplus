@@ -14,3 +14,6 @@ persist.vendor.fingerprint.type=rear
 ro.vendor.lge.build.target_country=COM
 ro.vendor.lge.build.target_operator=LAO
 ro.vendor.lge.swversion=G81040a
+
+# CAF selects the calibrated dual-microphone call route with this value.
+ro.vendor.audio.sdk.fluencetype=fluence
