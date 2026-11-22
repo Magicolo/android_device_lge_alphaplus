@@ -41,6 +41,9 @@ PRODUCT_PACKAGES += \
     vendor.lge.hardware.audio.dac.control@2.0-service
 
 # Camera
+# The 64-bit CamX torch path opens the legacy Qualcomm gralloc1 HAL.
+PRODUCT_PACKAGES += gralloc.qcom:64
+
 PRODUCT_PACKAGES += \
     ApertureOverlayAlphalm \
     ApertureOverlayAlphaplus
