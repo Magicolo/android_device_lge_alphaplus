@@ -22,7 +22,7 @@ TARGET_KERNEL_CONFIG += vendor/lge/lge-alpha.config
 BOARD_KERNEL_CMDLINE := $(filter-out kpti=off,$(BOARD_KERNEL_CMDLINE))
 
 # Keep build account and host names out of the kernel version banner.
-KERNEL_MAKE_FLAGS += KBUILD_BUILD_USER=builder KBUILD_BUILD_HOST=android-build
+TARGET_KERNEL_ADDITIONAL_FLAGS += KBUILD_BUILD_USER=builder KBUILD_BUILD_HOST=android-build
 
 # Lights
 $(call soong_config_set,LGE_LIGHTS_HAL,INCLUDE_DIR,$(DEVICE_PATH)/include)
