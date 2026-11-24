@@ -1,0 +1,2 @@
+/(system_ext|system/system_ext)/bin/imsipsecstarter    u:object_r:g8_imsipsecstarter_exec:s0
+/(system_ext|system/system_ext)/bin/imsipsecclient     u:object_r:g8_imsipsecclient_exec:s0

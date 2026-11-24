@@ -1,0 +1,2 @@
+# Stock LG IMS runs in radio and uses VSS for cellular voice media.
+typeattribute radio hal_vssims_client;

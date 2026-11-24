@@ -1,0 +1,18 @@
+type g8_imsipsecstarter, domain, coredomain;
+type g8_imsipsecstarter_exec, exec_type, file_type, system_file_type;
+init_daemon_domain(g8_imsipsecstarter)
+
+type g8_imsipsecclient, domain, coredomain;
+type g8_imsipsecclient_exec, exec_type, file_type, system_file_type;
+init_daemon_domain(g8_imsipsecclient)
+
+system_internal_prop(g8_imsipsec_ctl_prop)
+set_prop(g8_imsipsecstarter, g8_imsipsec_ctl_prop)
+
+# The stock app runs as radio and exchanges local datagrams with these helpers.
+allow radio { g8_imsipsecstarter g8_imsipsecclient }:unix_dgram_socket sendto;
+allow g8_imsipsecclient radio:unix_dgram_socket sendto;
+
+# The client installs the negotiated signaling policies through XFRM.
+allow g8_imsipsecclient self:capability net_admin;
+allow g8_imsipsecclient self:netlink_xfrm_socket { create_socket_perms_no_ioctl nlmsg_write };

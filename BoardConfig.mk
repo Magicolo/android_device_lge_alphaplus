@@ -33,3 +33,7 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 90
 
 # inherit from the proprietary version
 -include vendor/lge/alphaplus/BoardConfigVendor.mk
+
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/ims/sepolicy/private
+
+BOARD_VENDOR_SEPOLICY_DIRS += device/lge/alphaplus/ims/sepolicy/vendor

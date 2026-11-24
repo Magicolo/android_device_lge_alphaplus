@@ -1,0 +1,2 @@
+# The VSS client in this service uses its own Qualcomm IPC router socket.
+allow hal_vssims_default self:qipcrtr_socket create_socket_perms_no_ioctl;

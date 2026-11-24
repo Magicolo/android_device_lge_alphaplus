@@ -176,4 +176,6 @@
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
+    <!-- The G8 provides LG MmTel for LTE voice when allowed by the carrier. -->
+    <bool name="config_device_volte_available">true</bool>
 </resources>
