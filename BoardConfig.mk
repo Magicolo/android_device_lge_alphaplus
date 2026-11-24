@@ -23,6 +23,7 @@ BOARD_KERNEL_CMDLINE := $(filter-out kpti=off,$(BOARD_KERNEL_CMDLINE))
 
 # Keep build account and host names out of the kernel version banner.
 TARGET_KERNEL_ADDITIONAL_FLAGS += KBUILD_BUILD_USER=builder KBUILD_BUILD_HOST=android-build
+TARGET_KERNEL_ADDITIONAL_FLAGS += KAFLAGS=-fmacro-prefix-map=$(abspath $(TARGET_KERNEL_SOURCE))=/kernel
 
 # Lights
 $(call soong_config_set,LGE_LIGHTS_HAL,INCLUDE_DIR,$(DEVICE_PATH)/include)
